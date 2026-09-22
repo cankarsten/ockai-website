@@ -135,8 +135,8 @@ const Feature43 = (props: Props) => {
   const items = (features ?? []).slice(0, MAX_FEATURES);
 
   return (
-    <section className={cn("py-32", className)}>
-      <div className="container">
+    <section className={cn("py-8 m-auto bg-card w-full", className)}>
+      <div className="container m-auto">
         {heading && (
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <h2 className="text-4xl font-semibold tracking-tight text-pretty lg:text-5xl">
@@ -147,7 +147,7 @@ const Feature43 = (props: Props) => {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {items.map((feature, i) => (
             <div key={i} className="flex flex-col">
-              <div className="mb-5 flex size-16 items-center justify-center rounded-full bg-accent">
+              <div className="mb-5 flex size-16 items-center justify-center rounded-full bg-primary">
                 {feature.icon}
               </div>
               <h3 className="mb-2 text-xl font-medium">{feature.title}</h3>
