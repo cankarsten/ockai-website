@@ -37,10 +37,6 @@ interface Hero1Props extends HeroBasicProps {}
 type Props = Partial<Hero1Props>;
 
 const defaultProps: Hero1Props = {
-  badge: {
-    text: "Changelog v1.1",
-    announcement: "Check out our latest updates",
-  },
   heading: "Blocks Built With Shadcn & Tailwind",
   description:
     "Finely crafted components built with React, Tailwind and shadcn/ui. Developers can copy and paste these blocks directly into their project.",

@@ -125,7 +125,7 @@ const defaultProps: Feature43Props = {
   },
 };
 
-const MAX_FEATURES = 6;
+const MAX_FEATURES = 4;
 
 const Feature43 = (props: Props) => {
   const { heading, buttons, features, className } = {
@@ -146,7 +146,7 @@ const Feature43 = (props: Props) => {
         )}
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {items.map((feature, i) => (
-            <div key={i} className="flex flex-col">
+            <div key={i} className="flex flex-col items-center text-center">
               <div className="mb-5 flex size-16 items-center justify-center rounded-full bg-primary">
                 {feature.icon}
               </div>
