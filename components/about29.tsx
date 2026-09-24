@@ -19,7 +19,7 @@ interface AboutBasicProps {
   className?: string;
 }
 
-interface About29Props extends AboutBasicProps {}
+interface About29Props extends AboutBasicProps { }
 type Props = Partial<About29Props>;
 
 const defaultProps: About29Props = {
@@ -79,7 +79,7 @@ const defaultProps: About29Props = {
   ],
 };
 
-const MAX_COLUMNS = 3;
+const MAX_COLUMNS = 2;
 const MAX_IMAGES = 2;
 const COLUMN_CHARS = 160;
 
@@ -103,75 +103,20 @@ const About29 = (props: Props) => {
   const valuesBody = sections?.[3]?.content;
 
   return (
-    <section className={cn("py-32", className)}>
+    <section className={cn("pb-26 m-auto", className)}>
       <div className="container mx-auto">
-        <div className="flex flex-col gap-16 lg:gap-28">
-          <div className="flex flex-col gap-4 lg:gap-8">
-            <h2 className="max-w-3xl text-4xl font-semibold tracking-tighter lg:text-7xl">
-              {heading}
-            </h2>
-            {description && (
-              <p className="max-w-xl text-xl text-muted-foreground">
-                {description}
-              </p>
-            )}
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {gallery[0] && (
-              <img
-                src={gallery[0].src}
-                alt={gallery[0].alt}
-                className="size-full max-h-96 rounded-2xl object-cover"
-              />
-            )}
+        <div className="grid gap-10 md:grid-cols-3 md:gap-12">
+          {columns.map((section) => (
             <div
-              className="relative flex flex-col justify-between gap-10 overflow-hidden rounded-2xl bg-muted bg-cover bg-center p-10"
-              style={
-                gallery[1]
-                  ? { backgroundImage: `url(${gallery[1].src})` }
-                  : undefined
-              }
+              key={section.title}
+              className="flex flex-col gap-3 border-t border-border pt-6"
             >
-              <div className="absolute inset-0 bg-foreground/55" />
-              <div className="relative flex h-full flex-col justify-between gap-10">
-                {mission?.label && (
-                  <p className="text-sm font-semibold text-primary-foreground uppercase">
-                    {mission.label}
-                  </p>
-                )}
-                {mission?.content && (
-                  <p className="text-lg font-medium text-primary-foreground">
-                    {mission.content}
-                  </p>
-                )}
-              </div>
+              <h4 className="text-lg font-semibold">{section.title}</h4>
+              <p className="text-muted-foreground">
+                {truncate(section.content)}
+              </p>
             </div>
-          </div>
-          <div className="flex flex-col gap-10">
-            <div className="flex max-w-xl flex-col gap-4">
-              {valuesTitle && (
-                <h3 className="text-3xl font-semibold tracking-tight md:text-5xl">
-                  {valuesTitle}
-                </h3>
-              )}
-              {valuesBody && (
-                <p className="text-lg text-muted-foreground">{valuesBody}</p>
-              )}
-            </div>
-            <div className="grid gap-10 md:grid-cols-3 md:gap-12">
-              {columns.map((section) => (
-                <div
-                  key={section.title}
-                  className="flex flex-col gap-3 border-t border-border pt-6"
-                >
-                  <h4 className="text-lg font-semibold">{section.title}</h4>
-                  <p className="text-muted-foreground">
-                    {truncate(section.content)}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

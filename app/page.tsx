@@ -1,7 +1,7 @@
 import { Hero1 } from "@/components/hero1";
 import { Feature43 } from "@/components/feature43";
 import { Feature73 } from "@/components/feature73";
-import { Testimonial10 } from "@/components/testimonial10";
+import { Process1 } from "@/components/process1";
 import { Cta39 } from "@/components/cta39";
 import {
 
@@ -47,14 +47,14 @@ export default function Home() {
       <hr />
       <Feature73
         heading="Unsere Kernkompetenzen"
-        description="Gerne schauen wir uns Ihre bestehenden Bereiche an und erarbeiten zusammen eine automatisierte Lösung für Ihr Problem "
+        description="Wir verbinden drei Bereiche, in denen wir fachliche Expertise mit AI Engineering verbinden."
         buttons={{}}
         features={[
           {
             icon: <Zap className="size-5" />,
             title: "Marketing ",
             description:
-              "Die richtigen Kooperationspartner finden, verhandeln und Kampagnenerfolg messbar machen. ",
+              "Relevante Partner und Zielgruppen identifizieren, Kampagnen vorbereiten und Marketingprozesse effizienter machen.",
             image: {
               src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43",
               alt: "Laptop View of Google Search Console",
@@ -65,7 +65,7 @@ export default function Home() {
             icon: <Zap className="size-5" />,
             title: "Sales",
             description:
-              "Kunden identifizieren, priorisieren und bis zum Vertragsabschluss und Onboarding begleiten. ",
+              "Potenziale erkennen, Kunden priorisieren und Vertriebsteams bei der täglichen Arbeit unterstützen.",
             image: {
               src: "https://images.unsplash.com/photo-1521791136064-7986c2920216",
               alt: "Shacking Hands",
@@ -76,7 +76,7 @@ export default function Home() {
             icon: <Zap className="size-5" />,
             title: "M&A",
             description:
-              "Akquisitionsziele und Carve-out-Kandidaten screenen, Due Diligence unterstützen und Post-Merger-Prozesse strukturieren.",
+              "Akquisitionsziele analysieren, Transaktionen unterstützen und Wissen über den gesamten M&A-Prozess zugänglich machen.",
             image: {
               src: "https://images.unsplash.com/photo-1758518731462-d091b0b4ed0d",
               alt: "§ Persons in an office",
@@ -86,7 +86,7 @@ export default function Home() {
         ]}
       />
       <hr />
-      <Testimonial10 />
+      <Process1/>
       <hr />
       <Cta39 />
     </>

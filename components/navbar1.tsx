@@ -134,10 +134,6 @@ const Navbar1 = ({
       url: "#",
     },
   ],
-  auth = {
-    login: { title: "Login", url: "#" },
-    signup: { title: "Sign up", url: "#" },
-  },
   className,
 }: Navbar1Props) => {
   return (
@@ -164,10 +160,6 @@ const Navbar1 = ({
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
-          </div>
-          <div className="flex gap-2">
-            <Button variant="outline" size="sm" render={<a href={auth.login.url} />} nativeButton={false}>{auth.login.title}</Button>
-            <Button size="sm" render={<a href={auth.signup.url} />} nativeButton={false}>{auth.signup.title}</Button>
           </div>
         </nav>
 
@@ -200,11 +192,6 @@ const Navbar1 = ({
                   <Accordion className="flex w-full flex-col gap-4">
                     {menu.map((item) => renderMobileMenuItem(item))}
                   </Accordion>
-
-                  <div className="flex flex-col gap-3">
-                    <Button variant="outline" render={<a href={auth.login.url} />} nativeButton={false}>{auth.login.title}</Button>
-                    <Button render={<a href={auth.signup.url} />} nativeButton={false}>{auth.signup.title}</Button>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>

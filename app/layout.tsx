@@ -26,9 +26,53 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar1 />
+        <Navbar1
+          logo={{
+            url: "/",
+            src: "ockai-logo-c-inverted.png",
+            alt: "logo",
+            title: "oCKai",
+          }}
+          menu={[
+            { title: "Home", url: "/" },
+            { title: "Über uns", url: "/ueber-uns" },
+            { title: "Leistungen", url: "/leistungen" },
+            { title: "Kontakt", url: "/kontakt" },
+          ]}
+        />
         {children}
-        <Footer2 />
+        <Footer2
+          logo={{
+            url: "/",
+            src: "ockai-logo-c-inverted.png",
+            title: "ockai.de",
+            alt: "logo",
+          }}
+          description="Passende Partner finden. Zum Abschluss bringen. Automatisiert in Ihrem System"
+          sections={[
+            {
+              title: "",
+              links: [],
+            },
+            {
+              title: "",
+              links: [],
+            },
+            {
+              title: "Seiten",
+              links: [
+                { name: "Leistungen", href: "/leistungen" },
+                { name: "Über uns", href: "/ueber-uns" },
+                { name: "Kontakt", href: "/kontakt" },
+              ],
+            },
+          ]}
+          copyright="© 2026 ockai.de. All rights reserved."
+          legalLinks={[
+            { name: "Impressum", href: "/impressum" },
+            { name: "Datenschutz", href: "/datenschutz" },
+          ]}
+        />
       </body>
     </html>
   );
