@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "cn";
 
-const DATA = [
+const DEFAULT_ITEMS = [
   {
     id: 1,
     icon: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/google-icon.svg",
@@ -45,26 +45,41 @@ const DATA = [
   },
 ];
 
-interface Integration3Props {
-  className?: string;
+interface Integration3Item {
+  id: number;
+  icon: string;
+  title: string;
+  description: string;
 }
 
-const Integration3 = ({ className }: Integration3Props) => {
+interface Integration3Props {
+  className?: string;
+  heading?: string;
+  subheading?: string;
+  items?: Integration3Item[];
+}
+
+const Integration3 = ({
+  className,
+  heading = "Integrations",
+  subheading = "Connect your favourite apps to your workflow.",
+  items = DEFAULT_ITEMS,
+}: Integration3Props) => {
   return (
-    <section className={cn("py-16 m-auto", className)}>
-      <div className="container">
+    <section className={cn("py-16", className)}>
+      <div className="container m-auto">
         <div className="mx-auto flex flex-col items-center text-center">
           <div className="flex max-w-5xl flex-col items-center text-center">
             <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
-              Integrations
+              {heading}
             </h1>
             <h2 className="mb-8 max-w-3xl text-muted-foreground lg:text-2xl">
-              Connect your favourite apps to your workflow.
+              {subheading}
             </h2>
           </div>
 
           <div className="flex flex-col justify-center gap-4">
-            {DATA.map(({ id, icon, title, description }) => (
+            {items.map(({ id, icon, title, description }) => (
               <div key={id} className="flex items-center gap-4 py-4">
                 <div className="h-12 w-12 flex-shrink-0">
                   <img

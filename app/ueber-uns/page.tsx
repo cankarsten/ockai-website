@@ -87,13 +87,13 @@ export default function AboutUs() {
             id: "can-karsten",
             name: "Can Karsten",
             role: "Marketing x AI Engineering",
-            avatar: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp",
+            avatar: "Can_2024.jpg",
           },
           {
             id: "katja-kreyenkamp",
             name: "Katja Kreyenkamp",
             role: "M&A x Strategy",
-            avatar: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-2.webp",
+            avatar: "Katja_2026.jpeg",
           },
         ]}
       />

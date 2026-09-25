@@ -109,7 +109,7 @@ export default function Leistungen() {
           name: "Can Karsten",
           role: "Geschäftsführung & DevOps",
           avatar: {
-            src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp",
+            src: "Can_2024.jpg",
             alt: "Customer Name",
           },
         }}
@@ -152,9 +152,59 @@ export default function Leistungen() {
         ]}
       />
       <hr />
+      <Integration3
+        className="bg-card"
+        heading="Unser Werkzeugkasten"
+        subheading="Wir nutzen für jeden Aawendungsfall das richtige System"
+        items={[
+          {
+            id: 1,
+            icon: "https://api.iconify.design/simple-icons:openai.svg",
+            title: "chatGPT",
+            description:
+              "",
+          },
+          {
+            id: 1,
+            icon: "https://api.iconify.design/simple-icons:openai.svg",
+            title: "MS Copilot & Power Automate",
+            description:
+              "",
+          },
+          {
+            id: 1,
+            icon: "https://api.iconify.design/mdi:microsoft.svg",
+            title: "n8n",
+            description:
+              "",
+          },
+          {
+            id: 1,
+            icon: "https://api.iconify.design/simple-icons:mastra.svg",
+            title: "Flowise",
+            description:
+              "",
+          },
+          {
+            id: 1,
+            icon: "https://api.iconify.design/simple-icons:flowise.svg",
+            title: "Mastra",
+            description:
+              "",
+          },
+          {
+            id: 1,
+            icon: "https://api.iconify.design/simple-icons:langchain.svg",
+            title: "Langchain",
+            description:
+              "",
+          }
+        ]}
+
+      />
+      <hr />
       <Faq1
         heading="Häufige Fragen"
-        className="bg-card"
         items={[
           {
             id: "faq-1",
@@ -199,6 +249,7 @@ export default function Leistungen() {
       />
       <hr />
       <Cta38
+        className="bg-card"
         heading="Nicht die komplexeste Lösung. Die richtige."
         description="Wir suchen nicht die technisch komplexeste Lösung. Wir entwickeln die effizienteste, passendste und langfristig betreibbare Lösung für Ihren Anwendungsfall."
         buttons={{

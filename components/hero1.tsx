@@ -74,7 +74,7 @@ const Hero1 = (props: Props) => {
                 <ArrowUpRight className="size-4" />
               </Badge>
             )}
-            <h1 className="shimmer shimmer-invert shimmer-repeat-delay-6000 max-w-xl text-4xl font-semibold tracking-tight text-pretty md:text-5xl lg:max-w-3xl lg:text-6xl">
+            <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-pretty md:text-5xl lg:max-w-3xl lg:text-6xl">
               {heading}
             </h1>
             <p className="max-w-5xl text-balance text-muted-foreground lg:text-xl">

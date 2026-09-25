@@ -1,3 +1,6 @@
+"use client";
+
+import type { FormEvent } from "react";
 import { cn } from "cn";
 import { Button } from "@/components/ui/button";
 
@@ -7,6 +10,7 @@ interface BookADemo1Props {
   className?: string;
   ctaText?: string;
   microcopy?: string;
+  mailtoTo?: string;
 }
 
 type Props = Partial<BookADemo1Props>;
@@ -18,15 +22,54 @@ const defaultProps: BookADemo1Props = {
   ctaText: "Gespräch anfragen",
   microcopy:
     "Wir melden uns persönlich bei Ihnen, um den Anwendungsfall und mögliche nächste Schritte zu besprechen.",
+  mailtoTo: "",
 };
 
 const fieldClassName =
   "mt-2 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none ring-0 placeholder:text-muted-foreground focus:border-ring";
 
 const BookADemo1 = (props: Props) => {
-  const { heading, description, className, ctaText, microcopy } = {
+  const { heading, description, className, ctaText, microcopy, mailtoTo } = {
     ...defaultProps,
     ...props,
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = (formData.get("name") || "").toString().trim();
+    const company = (formData.get("company") || "").toString().trim();
+    const email = (formData.get("email") || "").toString().trim();
+    const phone = (formData.get("phone") || "").toString().trim();
+    const domain = (formData.get("domain") || "").toString().trim();
+    const process = (formData.get("process") || "").toString().trim();
+    const systems = (formData.get("systems") || "").toString().trim();
+
+    const subject = `Anfrage AI-Automatisierung - ${company || name || "Website"}`;
+    const body = [
+      "Neue Anfrage über das Website-Formular:",
+      "",
+      `Name: ${name}`,
+      `Unternehmen: ${company}`,
+      `E-Mail: ${email}`,
+      `Telefon: ${phone || "-"}`,
+      `Bereich: ${domain || "-"}`,
+      "",
+      "Prozess / Aufgabe:",
+      process || "-",
+      "",
+      "Beteiligte Systeme:",
+      systems || "-",
+    ].join("\n");
+
+    const mailtoUrl = `mailto:${mailtoTo || ""}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const popup = window.open(mailtoUrl, "_blank");
+
+    // Fallback for browsers or environments that block popup creation.
+    if (!popup) {
+      window.location.assign(mailtoUrl);
+    }
   };
 
   return (
@@ -49,7 +92,10 @@ const BookADemo1 = (props: Props) => {
             </p>
           </div>
 
-          <form className="rounded-xl border border-border bg-card p-6 md:p-8">
+          <form
+            className="rounded-xl border border-border bg-card p-6 md:p-8"
+            onSubmit={handleSubmit}
+          >
             <div className="grid gap-5">
               <div>
                 <label htmlFor="name" className="text-sm font-medium">
@@ -60,6 +106,7 @@ const BookADemo1 = (props: Props) => {
                   name="name"
                   type="text"
                   placeholder="Vor- und Nachname"
+                  required
                   className={fieldClassName}
                 />
               </div>
@@ -73,6 +120,7 @@ const BookADemo1 = (props: Props) => {
                   name="company"
                   type="text"
                   placeholder="Unternehmen"
+                  required
                   className={fieldClassName}
                 />
               </div>
@@ -86,6 +134,7 @@ const BookADemo1 = (props: Props) => {
                   name="email"
                   type="email"
                   placeholder="name@unternehmen.de"
+                  required
                   className={fieldClassName}
                 />
               </div>
@@ -125,6 +174,7 @@ const BookADemo1 = (props: Props) => {
                   name="process"
                   rows={5}
                   placeholder="Beschreiben Sie kurz, wie der Prozess heute funktioniert, wo Zeit verloren geht oder welche Aufgabe Sie automatisieren möchten."
+                  required
                   className={fieldClassName}
                 />
               </div>
