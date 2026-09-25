@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+jobs:
+  prod-deployment:
+    name: deploy to prod
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js 18
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    
+    - name: install caprover cli
+      run: npm install -g caprover
+
+    - name: CapRover deploy
+      run: |
+        caprover deploy \
+          --caproverUrl ${{ secrets.CAPROVER_SERVER }} \
+          --caproverApp ${{ secrets.CAPROVER_FRONTENDAPPNAME }} \
+          --appToken ${{ secrets.CAPROVER_FRONTENDTOKEN }} \
+          --branch "main"
