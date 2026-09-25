@@ -125,7 +125,7 @@ const defaultProps: Feature43Props = {
   },
 };
 
-const MAX_FEATURES = 4;
+const MAX_FEATURES = 6;
 
 const Feature43 = (props: Props) => {
   const { heading, buttons, features, className } = {
@@ -135,7 +135,7 @@ const Feature43 = (props: Props) => {
   const items = (features ?? []).slice(0, MAX_FEATURES);
 
   return (
-    <section className={cn("py-8 m-auto bg-card w-full", className)}>
+    <section className={cn("py-8 m-auto w-full", className)}>
       <div className="container m-auto">
         {heading && (
           <div className="mx-auto mb-16 max-w-3xl text-center">

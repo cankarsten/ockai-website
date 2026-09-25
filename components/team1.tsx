@@ -33,41 +33,13 @@ const Team1 = ({
       role: "CTO",
       avatar:
         "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-2.webp",
-    },
-    {
-      id: "member-3",
-      name: "Emily Watson",
-      role: "Head of Design",
-      avatar:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-3.webp",
-    },
-    {
-      id: "member-4",
-      name: "David Kim",
-      role: "Lead Engineer",
-      avatar:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-4.webp",
-    },
-    {
-      id: "member-5",
-      name: "Lisa Thompson",
-      role: "Product Manager",
-      avatar:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-5.webp",
-    },
-    {
-      id: "member-6",
-      name: "Alex Johnson",
-      role: "UX Designer",
-      avatar:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-6.webp",
-    },
+    }
   ],
   className,
 }: Team1Props) => {
   return (
-    <section className={cn("py-32", className)}>
-      <div className="container flex flex-col items-center text-center">
+    <section className={cn("py-16 m-auto", className)}>
+      <div className="container flex flex-col items-center text-center  m-auto">
         <h2 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
           {heading}
         </h2>
@@ -75,7 +47,7 @@ const Team1 = ({
           {description}
         </p>
       </div>
-      <div className="container mt-16 grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+      <div className="container mt-16 grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-2 m-auto">
         {members.map((member) => (
           <div key={member.id} className="flex flex-col items-center">
             <Avatar className="mb-4 size-20 border md:mb-5 lg:size-24">

@@ -132,7 +132,7 @@ const Feature73 = (props: Props) => {
   };
 
   return (
-    <section className={cn("py-32", className)}>
+    <section className={cn("py-16 m-auto", className)}>
       <div className="container mx-auto">
         <div className="mb-9 lg:mb-14 lg:max-w-3xl">
           <h2 className="mb-3 text-3xl font-semibold tracking-tight text-balance md:mb-4 md:text-4xl lg:mb-6">

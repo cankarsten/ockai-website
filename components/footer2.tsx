@@ -107,7 +107,7 @@ const Footer2 = (props: Props) => {
   const visibleSections = (sections ?? []).slice(0, MAX_SECTIONS);
 
   return (
-    <section className={cn("py-32", className)}>
+    <section className={cn("py-16 m-auto", className)}>
       <div className="container mx-auto">
         <footer>
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">

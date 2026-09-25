@@ -64,7 +64,7 @@ const Hero1 = (props: Props) => {
   };
 
   return (
-    <section className={cn("py-32", className)}>
+    <section className={cn("py-16 m-auto", className)}>
       <div className="container mx-auto">
         <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
           <div className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-left">
@@ -74,7 +74,7 @@ const Hero1 = (props: Props) => {
                 <ArrowUpRight className="size-4" />
               </Badge>
             )}
-            <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-pretty md:text-5xl lg:max-w-3xl lg:text-6xl">
+            <h1 className="shimmer shimmer-invert shimmer-repeat-delay-6000 max-w-xl text-4xl font-semibold tracking-tight text-pretty md:text-5xl lg:max-w-3xl lg:text-6xl">
               {heading}
             </h1>
             <p className="max-w-5xl text-balance text-muted-foreground lg:text-xl">

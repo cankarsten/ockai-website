@@ -18,10 +18,9 @@ interface CtaSimpleProps {
   className?: string;
 }
 
-interface Cta39Props extends CtaSimpleProps {}
-type Props = Partial<Cta39Props>;
+type Props = Partial<CtaSimpleProps>;
 
-const defaultProps: Cta39Props = {
+const defaultProps: CtaSimpleProps = {
   heading: "Call to Action",
   description:
     "Get access to our collection of pre-built blocks and components today.",
@@ -37,7 +36,7 @@ const defaultProps: Cta39Props = {
   },
 };
 
-const Cta39 = (props: Props) => {
+const Cta38 = (props: Props) => {
   const { heading, description, buttons, className } = {
     ...defaultProps,
     ...props,
@@ -46,20 +45,20 @@ const Cta39 = (props: Props) => {
   return (
     <section className={cn("py-16 m-auto", className)}>
       <div className="container mx-auto">
-        <div className="mx-auto max-w-5xl rounded-xl border border-dashed p-8 md:p-12 lg:p-16">
+        <div className="mx-auto max-w-5xl rounded-xl bg-primary p-8 text-background md:p-12 lg:p-16">
           <div className="flex flex-col items-center gap-4 text-center lg:gap-6">
             <h2 className="text-2xl font-semibold tracking-tight md:text-4xl">
               {heading}
             </h2>
-            <p className="max-w-2xl text-muted-foreground lg:text-lg">
+            <p className="max-w-2xl text-background/70 lg:text-lg">
               {description}
             </p>
             <div className="mt-2 flex flex-col gap-3 sm:flex-row">
               {buttons?.primary && (
-                <Button size="lg" render={<a href={buttons.primary.url} />} nativeButton={false}>{buttons.primary.text}</Button>
+                <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90" render={<a href={buttons.primary.url} />} nativeButton={false}>{buttons.primary.text}</Button>
               )}
               {buttons?.secondary && (
-                <Button variant="outline" size="lg" render={<a href={buttons.secondary.url} />} nativeButton={false}>{buttons.secondary.text}</Button>
+                <Button size="lg" variant="outline" className="border-background/30 text-background hover:bg-background/10 hover:text-background" render={<a href={buttons.secondary.url} />} nativeButton={false}>{buttons.secondary.text}</Button>
               )}
             </div>
           </div>
@@ -69,4 +68,4 @@ const Cta39 = (props: Props) => {
   );
 };
 
-export { Cta39 };
+export { Cta38 };

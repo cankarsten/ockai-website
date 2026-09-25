@@ -43,12 +43,8 @@ interface Navbar1Props {
     className?: string;
   };
   menu?: MenuItem[];
-  auth?: {
-    login: {
-      title: string;
-      url: string;
-    };
-    signup: {
+  cta?: {
+    button: {
       title: string;
       url: string;
     };
@@ -134,11 +130,14 @@ const Navbar1 = ({
       url: "#",
     },
   ],
+  cta = {
+    button: { title: "Login", url: "#" },
+  },
   className,
 }: Navbar1Props) => {
   return (
-    <section className={cn("py-4 m-auto", className)}>
-      <div className="container">
+    <section className={cn("py-4", className)}>
+      <div className="container m-auto">
         {/* Desktop Menu */}
         <nav className="hidden items-center justify-between lg:flex">
           <div className="flex items-center gap-6">
@@ -160,6 +159,9 @@ const Navbar1 = ({
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
+          </div>
+          <div className="flex gap-2">
+            <Button className="" variant="default" size="sm" render={<a href={cta.button.url} />} nativeButton={false}>{cta.button.title}</Button>
           </div>
         </nav>
 
@@ -192,6 +194,10 @@ const Navbar1 = ({
                   <Accordion className="flex w-full flex-col gap-4">
                     {menu.map((item) => renderMobileMenuItem(item))}
                   </Accordion>
+
+                  <div className="flex flex-col gap-3">
+                    <Button variant="default" render={<a href={cta.button.url} />} nativeButton={false}>{cta.button.title}</Button>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
